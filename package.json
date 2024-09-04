@@ -1,0 +1,37 @@
+{
+  "name": "electron-publisher-cos",
+  "version": "1.0.0",
+  "description": "Electron builder publish plugin for Tencent Cloud COS",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakexchan/electron-publisher-cos.git"
+  },
+  "keywords": [
+    "electron",
+    "electron-builder",
+    "electron-builder publisher",
+    "tencent cloud",
+    "cos"
+  ],
+  "author": "Kevin Chan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakexchan/electron-publisher-cos/issues"
+  },
+  "homepage": "https://github.com/jakexchan/electron-publisher-cos#readme",
+  "devDependencies": {
+    "@types/node": "^22.5.3",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "builder-util": ">=20.0.0",
+    "electron-publish": ">=20.0.0"
+  },
+  "dependencies": {
+    "cos-nodejs-sdk-v5": "^2.14.6"
+  }
+}
