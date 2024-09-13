@@ -11,6 +11,8 @@ interface COSPublisherOptions {
   bucket: string;
   region: string;
   path: string;
+
+  afterUpload: (cosClient: COS, uploadName: string) => void;
 }
 
 export default class COSPublisher extends Publisher {
@@ -99,6 +101,9 @@ export default class COSPublisher extends Publisher {
                 },
                 'electron-publisher-cos:upload:done'
               );
+              if (this.option.afterUpload) {
+                this.option.afterUpload(this.cosClient, uploadName);
+              }
               resolve(data);
             }
           }
