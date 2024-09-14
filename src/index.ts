@@ -12,7 +12,7 @@ interface COSPublisherOptions {
   region: string;
   path: string;
 
-  afterUpload: (cosClient: COS, uploadName: string) => void;
+  afterUpload: (cosClient: COS, uploadName: string) => Promise<void>;
 }
 
 export default class COSPublisher extends Publisher {
@@ -102,7 +102,7 @@ export default class COSPublisher extends Publisher {
                 'electron-publisher-cos:upload:done'
               );
               if (this.option.afterUpload) {
-                this.option.afterUpload(this.cosClient, uploadName);
+                await this.option.afterUpload(this.cosClient, uploadName);
               }
               resolve(data);
             }
