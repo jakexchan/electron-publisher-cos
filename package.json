@@ -1,6 +1,6 @@
 {
   "name": "electron-publisher-cos",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Electron builder publish plugin for Tencent Cloud COS",
   "main": "dist/index.js",
   "scripts": {
