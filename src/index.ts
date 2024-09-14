@@ -81,7 +81,7 @@ export default class COSPublisher extends Publisher {
               progressBar?.update(progressData.percent);
             },
           },
-          (err, data) => {
+          async (err, data) => {
             if (err) {
               log.error(
                 {
