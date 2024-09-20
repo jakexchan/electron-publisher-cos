@@ -2,6 +2,7 @@ import { log, InvalidConfigurationError, isEmptyOrSpaces } from 'builder-util';
 import { Publisher, UploadTask, PublishContext } from 'electron-publish';
 import COS from 'cos-nodejs-sdk-v5';
 import path from 'node:path';
+import pathPosix from 'node:path/posix';
 import fsPromise from 'node:fs/promises';
 
 interface COSPublisherOptions {
@@ -59,7 +60,7 @@ export default class COSPublisher extends Publisher {
         const fileName = path.basename(file);
         let uploadName = fileName;
         if (this.option.path) {
-          uploadName = path.join(this.option.path, fileName);
+          uploadName = pathPosix.join(this.option.path, fileName);
         }
 
         const progressBar = this.createProgressBar(fileName, 200);
